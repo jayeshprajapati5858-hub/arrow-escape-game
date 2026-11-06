@@ -1,4 +1,4 @@
-const CACHE='arrow-escape-v7.0.0';
+const CACHE='arrow-escape-v7.0.1';
 const ASSETS=['./','./index.html','./style.css','./app.js','./home.js','./home-sky.webp','./engine.js','./model.js','./modes.js','./color-levels.json','./adventure-levels.json','./levels.json','./icon.svg','./icon-192.png','./icon-512.png','./manifest.webmanifest'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('arrow-escape-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});

@@ -5,6 +5,12 @@
 <meta name="theme-color" content="#fafaf8"><meta name="description" content="A little focus. A clear way out. Choose Adventure, Original Game or Color Order. 120 Adventure levels, 82 original mazes and 20 color puzzles, each with separate saved progress.">
 <title>Arrow Escape · Find your way out</title>
 <link rel="apple-touch-icon" href="./icon-192.png"><link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest"><link rel="stylesheet" href="./style.css">
+<style>
+.home-leaving #installGameLink { display: none; }
+@media (display-mode: standalone), (display-mode: fullscreen), (display-mode: minimal-ui) {
+  #installGameLink { display: none; }
+}
+</style>
 </head>
 <body>
 <section id="homeScreen" class="home-screen" aria-label="Arrow Escape home" aria-busy="true">
@@ -28,6 +34,15 @@
       <div class="home-footnote"><span>A new challenge at every turn.</span><button id="homeSettings" aria-label="Open home settings" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 17h14"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></svg>Settings</button></div>
     </div>
   </div>
+  <a id="installGameLink" href="/arrow-escape.apk"
+   download
+   style="position:fixed;bottom:20px;right:20px;
+   z-index:9999;padding:14px 22px;
+   background:#2563eb;color:white;
+   border-radius:12px;text-decoration:none;
+   font-weight:bold;">
+  Install Now
+</a>
 </section>
 <div id="launchTransition" class="launch-transition" aria-hidden="true" hidden><svg viewBox="0 0 800 400"><path class="launch-line" d="M-30 280H235V145H710"/><path class="launch-tip" d="m680 115 30 30-30 30"/></svg><span>Find your way out.</span></div>
 
@@ -52,12 +67,4 @@
 <div class="modal-backdrop" id="modal" hidden><section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1"><button class="close-modal icon-button" id="closeModal" aria-label="Close dialog"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button><div id="modalContent"></div></section></div>
 <noscript><div class="no-script">Arrow Escape needs JavaScript to run. Please enable it in your browser.</div></noscript>
 <script type="module" src="./app.js"></script>
-<a href="/arrow-escape.apk"
-   download
-   style="position:fixed;bottom:20px;right:20px;
-   z-index:9999;padding:14px 22px;
-   background:#2563eb;color:white;
-   border-radius:12px;text-decoration:none;
-   font-weight:bold;">
-  Install Now
-</a></body></html>
+</body></html>
